@@ -8,11 +8,19 @@ import { fakeData } from '../Scripts/RequestFakeData'
 import NetInfo from '@react-native-community/netinfo';
 import * as Permissions from 'expo-permissions';
 import * as Location from 'expo-location';
-import {config, adkey1, adkey2} from '../ApiKeys'
+import {hiddenconfig, adkey1, adkey2} from '../ApiKeys'
 import {
   AdMobBanner,
 } from 'expo-ads-admob';
 const testing = true;
+const config = {
+  apiKey: hiddenconfig.apiKey,
+  authDomain: hiddenconfig.authDomain,
+  databaseURL: hiddenconfig.databaseURL,
+  projectId: hiddenconfig.projectId,
+  storageBucket: hiddenconfig.storageBucket,
+  messagingSenderId: hiddenconfig.messagingSenderId,
+};
 
 function HomeScreen({ navigation }) {
   return (
