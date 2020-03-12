@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "Unchained",
+    "slug": "test-project",
+    "privacy": "unlisted",
+    "sdkVersion": "36.0.0",
+    "android": {
+      "package": "com.Nick.Unchained",
+      "versionCode": 1,
+      "config": {
+        "googleMobileAdsAppId": "ca-app-pub-5276534352660808~9821318735" 
+      }
+    },
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./Images/icon.png",
+    "splash": {
+      "image": "./Images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#d6b28d"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    }
+  }
+}

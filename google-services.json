@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "79791192002",
+    "firebase_url": "https://unchained-db.firebaseio.com",
+    "project_id": "unchained-db",
+    "storage_bucket": "unchained-db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:79791192002:android:ff29bab2a3f8a6bc79085b",
+        "android_client_info": {
+          "package_name": "com.Nick.Unchained"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "79791192002-m4crotu9ldn2t9499j4q5obdaosobm2l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHMhoFo-_tK7VTBSaAXnfpsWUNAkMbDno"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "79791192002-m4crotu9ldn2t9499j4q5obdaosobm2l.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "79791192002-cuviofg2a2rk57h86d8f28d0u6ojqbcg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.unchained.unchained"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
