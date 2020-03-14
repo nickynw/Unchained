@@ -12,7 +12,7 @@ import {hiddenconfig, adkey1, adkey2} from '../ApiKeys'
 import {
   AdMobBanner,
 } from 'expo-ads-admob';
-const testing = true;
+const testing = false;
 const config = {
   apiKey: hiddenconfig.apiKey,
   authDomain: hiddenconfig.authDomain,
@@ -29,7 +29,7 @@ function HomeScreen({ navigation }) {
 
       <View ><Image style={styles.picLogoContainer} source={require('../Images/logo.png')} /></View>
 
-      <View style={styles.hintContainer}><Text style={styles.hintFont}>Press below to search for nearby cafes.</Text></View>
+      <View style={styles.hintContainer}><Text style={styles.hintFont}>Press and Hold results for directions.</Text></View>
 
       <View><SearchButton navigation={navigation} /></View>
 
@@ -55,7 +55,7 @@ class SearchButton extends Component {
       time: 0,
       data: "none",
       location: "no_location",
-      status: "Waiting"
+      status: "Touch below to search for nearby cafes."
     }
   }
 
@@ -107,6 +107,7 @@ class SearchButton extends Component {
               //Scenarios for if data is previously loaded from earlier search, no location, no internet.
             } else {
               if (this.state.data != "none") {
+                this.setState({ status: "Search Results Ready - Touch Below" })
                 this.props.navigation.navigate('Search', { data: this.state.data, innerSpinner: this.state.innerSpinner, outerSpinner: this.state.outerSpinner })
               }
               if (this.state.location == "no_location") {

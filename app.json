@@ -1,8 +1,8 @@
 {
   "expo": {
     "name": "Unchained",
-    "slug": "test-project",
-    "privacy": "unlisted",
+    "slug": "unchained",
+    "privacy": "public",
     "sdkVersion": "36.0.0",
     "android": {
       "package": "com.Nick.Unchained",

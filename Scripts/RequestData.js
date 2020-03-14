@@ -153,8 +153,10 @@ function createTime(time) {
 
 //Returns true if value matches any values in array
 function inArray(value, arr) {
+  valueLower = value.toLowerCase();
   for (var i = 0; i < arr.length; i++) {
-    if (value.includes(arr[i])) {
+    comparisonLower = arr[i].toLowerCase();
+    if (valueLower.includes(comparisonLower)) {
       return "true";
     }
   }
@@ -176,10 +178,10 @@ function orderedPlaces(places) {
     return a.duration - b.duration;
   });
   pairs.sort(function (a, b) {
-    return b.notchain - a.notchain;
+    return b.open - a.open;
   });
   pairs.sort(function (a, b) {
-    return b.open - a.open;
+    return b.notchain - a.notchain;
   });
   for (var i = 0; i < pairs.length; i++) {
     //console.log(pairs[i])
@@ -199,6 +201,8 @@ function getLocations(places) {
 
 /********************ASYNCHRONOUS FUNCTIONS**********************/
 
+/*This function is the main entry point, it takes the component (this) 
+ It uses the array of chains retrieved from the firebase database, and the device's location*/
 async function getData(component) {
   //Get phone's current location
   var location = component.state.location
@@ -222,7 +226,7 @@ async function getData(component) {
     latitude: location.coords.latitude,
     longitude: location.coords.longitude
   };
-  component.setState({ data: obj , status: "Ready"})
+  component.setState({ data: obj , status: "Search Results Ready - Touch Below"})
   //Uncomment for testing
   /*
   for (var i = 0; i < places.length; i++){
@@ -289,8 +293,8 @@ async function retrieveDistances(places, latitude, longitude) {
     let response = await fetch(url);
     let responseJson = await response.json();
     for (var i = 0; i < places.length; i++) {
-      console.log(places[i].name + ": " + "\n")
-      console.log("url: " + url + "\n");
+      console.log(places[i].name + ". " + "\n")
+      //console.log("url: " + url + "\n");
       places[i].distance = responseJson.rows[0].elements[i].distance.text
       places[i].duration = Math.round(responseJson.rows[0].elements[i].duration.value / 60);
     }

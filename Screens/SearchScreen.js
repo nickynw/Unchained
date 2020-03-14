@@ -41,13 +41,13 @@ function getContainerColor(item) {
     return "#d9d5d0"
   }*/
   if (item.timeleft == "Closed" && item.ischain == "true") {
-    return "#b3988d"
+    return "#b5a19e"
   }
   if (item.timeleft == "Closed" && item.ischain != "true") {
-    return "#bfb2ae"
+    return "#fad8d2"
   }
   if (item.timeleft != "Closed" && item.ischain == "true") {
-    return "#c9c5b5"
+    return "#b5aa9e"
   }
   return "#e6e3d8"
   //return "#f5f4ed"
@@ -103,7 +103,7 @@ function SearchScreen({ route, navigation }) {
   return (
     <SafeAreaView style={[styles.listContainer, { flex: 1 }]}>
 
-      <View style={{ marginBottom: 8 }}>
+      <View style={{ marginBottom: 52 }}>
         <FlatList
           data={places}
           keyExtractor={(item, index) => item.name}

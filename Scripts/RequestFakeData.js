@@ -38,10 +38,10 @@ function fakeData(component){
       return a.duration - b.duration;
     });
     pairs.sort(function(a, b) {
-      return b.notchain - a.notchain;
+      return  b.open - a.open;
     });
     pairs.sort(function(a, b) {
-      return  b.open - a.open;
+      return b.notchain - a.notchain;
     });
     for(var i = 0; i < pairs.length; i++){
       ordArr.push(arr[pairs[i].index])
